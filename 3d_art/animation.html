@@ -9,5 +9,24 @@
 	<body>
 		<h4><a href="../index.html">Portfolio Website</a></h4>
 		<h3>Animation</h3>
+		<div style="width:50%; margin:auto">
+			<h3>Rigging Skeletons</h3>
+			<p>
+				Before working with Unreal Engine, I had only worked with 2D game engines, so I lacked experience with animation outside of 2D sprites. After a bit research I noticed that Unreal Engine supports basic functionality for animations and rigging so I searched for tutorials in Unreal. I have prior experience with 3D modelling in Autodesk CAD from a Sci-Vis high school course, so after watching a few tutorials I quickly understood the basic connection between rigging and modelling. 
+			</p>
+			<p>
+				First, I took bullet-shaped enemy with three disconnected cones offset from the main body. I had an animation in mind where the enemy freely floats rotating it's main body separately from its three independent cones. I started rigging by creating three bones from the root bone to each cone. Then, I changed the bound weights of the bones in order to isolate individual bones' influence to the respective connected mesh. After struggling with this for some time, I realized the sum of weights to all bones for a vertex is 1. I think that I had been going in and out of the weight editor which reset weight distribution among vertices to all bones, but after setting values for all vertices to all bones then confirming weights together I didn't encounter this issue again.
+			</p>
+			<p>
+				For the cube with a rectangular prism with arms, I decided to add two bones for arms. Then isolate those bones from affecting the middle cube. For the remaining three enemies, I followed the same techniques after testing animations with the initial two rigged skeletons.
+			</p>
+			<h3>Animating Skeletons</h3>
+			<p>
+				After rigging the <i>shooter</i> and <i>tank</i> enemies, I created a LevelSequence, added FKControls for the respective skeletons, and worked on an attack and idle animation for the shooter. I created a 4s animation where the main body floats up left and right while the joints slowly float with the body then rotate opposite the body in a loop. I keyed separate bones at different frames with different interpolation presets into an animation that felt reasonable for a first attempt, but I spent far too long on one animation then intended. Because I wanted to focus iteration later and realized I could probably utilize procedural animation to great affect for the joints, I decided to take less time on the remaining enemy animations. For the attack animation for the shooter, I had it rotate back with all three joints slowly, then quickly rotate forward and back to the original position. Similarly the tank animation is a sort of headbutt/hug hybrid animation and it has no idle animation, because it's not floating lightweight in the air.
+			</p>
+			<p>
+				The sphere enemy -- I named slime -- had only a root bone. I feel there is a great opportunity to deform the mesh based on physics for procedural animation, but decided to keep things simple at the time and go back to that later. I could have avoided any animation but decided on lowering the height and giving it an animation jumping forward. I set a small animation with 3 keyframes: original height, jump height, then back to original height. This did not feel like a slime's jump in other games I've played. I played around with interpolation presets and found the option for manually influence curves. From here I quickly settled on a quick ascent, hover, then quick descent forward followed by a short rebound hop backwards.
+			</p>
+		</div>
 	</body>
 </html>
