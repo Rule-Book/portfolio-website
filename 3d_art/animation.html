@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en=US">
 	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+		<link rel="stylesheet" type="text/css" href="../styles/slideshow.css">
+		<link rel="stylesheet" type="text/css" href="../styles/w3-slideshow.css">
+		<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> --> <!-- w3 slideshow css -->
 		<title>Portfolio Website - Animation</title>
 	</head>
 
-	<body>
+	<body style="background-color:green;">
 		<h4><a href="../index.html">Portfolio Website</a></h4>
 		<h3>Animation</h3>
 		<div style="width:50%; margin:auto">
@@ -20,6 +23,18 @@
 			<p>
 				For the cube with a rectangular prism with arms, I decided to add two bones for arms. Then isolate those bones from affecting the middle cube. For the remaining three enemies, I followed the same techniques after testing animations with the initial two rigged skeletons.
 			</p>
+			<div class="w3-content w3-display-container" id="rigging_slides" style="max-width:800px">
+				<img class="rigging_slides-image" src="../pictures/2024-07-13-models.png" style="width:100%">
+				<img class="rigging_slides-image" src="../pictures/2024-07-16-polishing-unity-project.png" style="width:100%">
+				<img class="rigging_slides-image" src="../pictures/2024-07-17-floor4-level-design.png" style="width:100%">
+				<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+					<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1, 'rigging_slides')">&#10094;</div>
+					<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1, 'rigging_slides')">&#10095;</div>
+					<span class="w3-badge demo rigging_slides-indicator w3-border w3-transparent w3-hover-white" onclick="currentDiv(1, 'rigging_slides')"></span>
+					<span class="w3-badge demo rigging_slides-indicator w3-border w3-transparent w3-hover-white" onclick="currentDiv(2, 'rigging_slides')"></span>
+					<span class="w3-badge demo rigging_slides-indicator w3-border w3-transparent w3-hover-white" onclick="currentDiv(3, 'rigging_slides')"></span>
+				</div>
+			</div>
 			<h3>Animating Skeletons</h3>
 			<p>
 				After rigging the <i>shooter</i> and <i>tank</i> enemies, I created a LevelSequence, added FKControls for the respective skeletons, and worked on an attack and idle animation for the shooter. I created a 4s animation where the main body floats up left and right while the joints slowly float with the body then rotate opposite the body in a loop. I keyed separate bones at different frames with different interpolation presets into an animation that felt reasonable for a first attempt, but I spent far too long on one animation then intended. Because I wanted to focus iteration later and realized I could probably utilize procedural animation to great affect for the joints, I decided to take less time on the remaining enemy animations. For the attack animation for the shooter, I had it rotate back with all three joints slowly, then quickly rotate forward and back to the original position. Similarly the tank animation is a sort of headbutt/hug hybrid animation and it has no idle animation, because it's not floating lightweight in the air.
@@ -27,6 +42,19 @@
 			<p>
 				The sphere enemy -- I named slime -- had only a root bone. I feel there is a great opportunity to deform the mesh based on physics for procedural animation, but decided to keep things simple at the time and go back to that later. I could have avoided any animation but decided on lowering the height and giving it an animation jumping forward. I set a small animation with 3 keyframes: original height, jump height, then back to original height. This did not feel like a slime's jump in other games I've played. I played around with interpolation presets and found the option for manually influence curves. From here I quickly settled on a quick ascent, hover, then quick descent forward followed by a short rebound hop backwards.
 			</p>
+			<div class="w3-content w3-display-container" id="anim_slides" style="max-width:800px">
+				<img class="anim_slides-image" src="../pictures/2024-07-13-models.png" style="width:100%">
+				<img class="anim_slides-image" src="../pictures/2024-07-16-polishing-unity-project.png" style="width:100%">
+				<img class="anim_slides-image" src="../pictures/2024-07-17-floor4-level-design.png" style="width:100%">
+				<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+					<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1, 'anim_slides')">&#10094;</div>
+					<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1, 'anim_slides')">&#10095;</div>
+					<span class="w3-badge demo anim_slides-indicator w3-border w3-transparent w3-hover-white" onclick="currentDiv(1, 'anim_slides')"></span>
+					<span class="w3-badge demo anim_slides-indicator w3-border w3-transparent w3-hover-white" onclick="currentDiv(2, 'anim_slides')"></span>
+					<span class="w3-badge demo anim_slides-indicator w3-border w3-transparent w3-hover-white" onclick="currentDiv(3, 'anim_slides')"></span>
+				</div>
+			</div>
 		</div>
+		<script src="../js/slideshow.js"></script>
 	</body>
 </html>
