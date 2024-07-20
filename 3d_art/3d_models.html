@@ -2,12 +2,45 @@
 <html lang="en=US">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+		<link rel="stylesheet" type="text/css" href="../styles/w3-slideshow.css">
 		<title>Portfolio Website - 3D Models</title>
 	</head>
 
 	<body>
 		<h4><a href="../index.html">Portfolio Website</a></h4>
 		<h3>3D Models</h3>
+		<div style="width:50%; margin:auto">
+			<h3>Creating Enemies</h3>
+			<p>
+				Unreal Engine has many freely available models available through built-in characters, the asset store, and the ability to port in models from outside sources. But I feel that it's important to understand the basics of what tools are available through Unreal directly to better understand how it treats objects that are imported in from other sources and any limitations it might have. I hope this saves me from spending excess time understanding arbitrary convention for established meshes/skeletons used for the purpose of animating 
+			</p>
+			<p>
+				I decided to create basic static meshes from primitive 3D objects accessible directly in Unreal Engine to assign to enemies that I will later animate. I am sure I could learn much more working with other modelling software, however I already have experience modelling with Autodesk CAD from high school and understand I could easily spend weeks learning to creating proper 3d models in another software. I quickly found in blueprints that meshes of 3D primitives can be added as components: cubes, spheres, cones, and cylinders. I drew basic designs on paper and began adding components to blueprints of each enemy. Excluding the <i>slime</i>, I added geometry to have at least one joint animated to prepare for learning animating basics later with these meshes, and for the <i>shooter</i> I added 3 detached cones. I also created a sword, shield, and bow mesh to have objects to animate player inputs later.
+			</p>
+			<div class="w3-content w3-display-container" id="rigging_slides" style="max-width:800px">
+				<img class="rigging_slides-image slideshow" src="../pictures/2024-07-20-model-slime.png" style="width:100%">
+				<img class="rigging_slides-image slideshow" src="../pictures/2024-07-20-model-tank.png" style="width:100%">
+				<img class="rigging_slides-image slideshow" src="../pictures/2024-07-20-model-pest.png" style="width:100%">
+				<img class="rigging_slides-image slideshow" src="../pictures/2024-07-20-model-debuff.png" style="width:100%">
+				<img class="rigging_slides-image slideshow" src="../pictures/2024-07-20-model-shooter.png" style="width:100%">
+				<img class="rigging_slides-image slideshow" src="../pictures/2024-07-13-models.png" style="width:100%">
+				<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+					<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1, 'rigging_slides')">&#10094;</div>
+					<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1, 'rigging_slides')">&#10095;</div>
+					<span class="w3-badge demo rigging_slides-indicator w3-border w3-transparent w3-hover-white" onclick="currentDiv(1, 'rigging_slides')"></span>
+					<span class="w3-badge demo rigging_slides-indicator w3-border w3-transparent w3-hover-white" onclick="currentDiv(2, 'rigging_slides')"></span>
+					<span class="w3-badge demo rigging_slides-indicator w3-border w3-transparent w3-hover-white" onclick="currentDiv(3, 'rigging_slides')"></span>
+					<span class="w3-badge demo rigging_slides-indicator w3-border w3-transparent w3-hover-white" onclick="currentDiv(4, 'rigging_slides')"></span>
+					<span class="w3-badge demo rigging_slides-indicator w3-border w3-transparent w3-hover-white" onclick="currentDiv(5, 'rigging_slides')"></span>
+					<span class="w3-badge demo rigging_slides-indicator w3-border w3-transparent w3-hover-white" onclick="currentDiv(6, 'rigging_slides')"></span>
+				</div>
+			</div>
+			<p>
+				After adding 3D objects as components to blueprints, however, I did not have dedicated static_mesh objects for each individual enemy. So, I went through each blueprint and merged actors together creating a separate static_mesh object for each enemy and weapon which I then attached to new blueprints. From here, I could follow the process to rig and animate these meshes as if they came from any other modelling software.
+			</p>
+		</div>
+		<script src="../js/slideshow.js"></script>
 	</body>
 </html>
