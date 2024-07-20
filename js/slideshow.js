@@ -1,12 +1,11 @@
 var slideIndex = 1;
-// showDivs(slideIndex, 'mySlides');
-// showDivs(slideIndex, 'mySlides2');
+init_slides()
 
+function init_slides() {
   let slideshows = document.getElementsByClassName("w3-content");
-for (i = 0; i < slideshows.length; i++) {
-  // slideshow[i].name = "none";  
-  var slideIndex = 1;
-  showDivs(slideIndex, slideshows[i].id);
+  for (i = 0; i < slideshows.length; i++) {
+    showDivs(1, slideshows[i].id);
+  }
 }
 
 function plusDivs(ind, slideshow_name) {
