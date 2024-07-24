@@ -9,5 +9,19 @@
 	<body>
 		<h4><a href="../index.html">Portfolio Website</a>&#x2936;</h4>
 		<h3>Rendering</h3>
+		<div style="width:50%; margin:auto">
+			<h3>Opening a Window with OpenGL</h3>
+			<p>
+				I wanted to understand how feasible it would be to create games without the use of an established game engine. I feel that learning how to use a game engine can be as time consuming as learning the underlying fundamentals. Through previous experience creating games across other game engines (RPG Maker, Game Maker, Unity) I felt confident that if I could handle graphics then I would be comfortable without needing a game engine for my projects, then I could repurpose any engine code I write for programs or games while building my own documentation of computing in general instead of accumulating knowledge on a specific game engine.
+			</p>
+			<p>
+				To start, I looked for platform independent graphics in order to not be constrained with my knowledge to one platform and came to see OpenGL could be used to create graphics independent of your operating system and brand of GPU. I had seen OpenGL as a rendering option alongside DirectX in games that I have played and researched more. I later read that Vulkan is a form of spiritual successor to OpenGL. Though, because I had trouble understanding the fundamentals of graphics and shaders, I decided to start working with OpenGL hoping that its established tutorials would help guide me through the learning process.
+			</p>
+			<p>
+				It was easy enough to find beginner tutorials through <a href="https://learnopengl.com/">learnopengl.com</a>, but it took a long time to digest the concepts presented through the tutorials. In order to complete the "Creating a Window" tutorial, I learned how to use CMake, generate an openGL context for my computer, and generate a header file of OpenGL API functions for my computer. I had many issues learning to bring all of this new knowledge together, but what I did not realize for the longest time was that I misunderstood how header and object files worked when compiling C code into an executable. Thankfully, I found a great <a href="https://www.lurklurk.org/linkers/linkers.html">explanation on linkers</a> which cleared up my final issue before I completed the tutorial. I took the roundabout way to generate code to create a window which I consider my "Hello World" for OpenGL, but I feel confident now that with the same tools at my disposal (and my notes) I could follow the same process for any standard computer and graphics-card combination.
+			</p>
+			<p>
+				I would love to spend more time playing with rendering and shaders to better understand how graphics are programmed, but I feel that I would have a much higher short-term payoff generalizing instead of specializing through a game engine at which point I can come back to OpenGL with a new perspective and many ideas to experiment with.
+			</p>
 	</body>
 </html>
